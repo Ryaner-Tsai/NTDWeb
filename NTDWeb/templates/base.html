@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>NTD Engineering – Consultant LLC</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="{% static 'openicon/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'fontawesome/css/all.css' %}" rel="stylesheet">
+    <link href="//db.onlinewebfonts.com/c/a7e3822358f6dcb2f986a68cf24721b2?family=MV+Boli" rel="stylesheet"
+          type="text/css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script type="text/javascript" src="{% static '/JsCode.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      * {
+         padding:0px;
+         margin:0px;
+         font-family: "Microsoft JhengHei","Gotham SSm A","Gotham SSm B",Graphik,Helvetica,Arial,sans-serif;
+
+      }
+      body {
+      width:100%;
+
+
+      {% if request.path == '/' %}
+
+      background: url("{% static 'NTDBackGroundR15.svg' %}");
+      background-position:center top;
+      background-size:100%;
+
+
+
+      {% elif request.path == '/about' %}
+      background: url("{% static 'NTDAboutBackGround2.svg' %}");
+      background-position: center top;
+      {% endif %}
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+
+
+
+      }
+      nav {
+      background-color: rgba(255, 255, 255, 0.9);
+      }
+      {% if request.path != '/about' %}
+            .FontMax {
+        font-size: 36px;
+        font-weight:400;
+        font-family:"Microsoft JhengHei";
+      }
+      .FontLarge {
+        font-size: 2.0em;
+
+        font-family:"Gotham SSm A","Gotham SSm B",Helvetica,Arial,sans-serif;
+        color: rgb(70,70,70);
+        letter-spacing: 1px;
+      }
+      .FontBig {
+        font-size: 14px;
+        font-weight:lighter;
+        font-family:"Microsoft JhengHei","Gotham SSm A","Gotham SSm B",Helvetica,Arial,sans-serif;
+        line-height: 1.2em;
+        color: rgb(70,70,70);
+        letter-spacing: 1px;
+      }
+      .FontMid {
+        font-size: .95em;
+        font-family:"Gotham SSm A","Gotham SSm B",Graphik,Helvetica,Arial,sans-serif;
+        line-height:1.3em;
+        color: rgb(100,100,100);
+        text-shadow: 0 0 10px rgb(246,235,226);
+      }
+      {% else %}
+            .FontMax {
+        font-size: 3.5em;
+        font-weight:BOLD;
+        font-family:Arial;
+      }
+      .FontLarge {
+        font-size: 2.5em;
+        font-weight:BOLD;
+        font-family:"Gotham SSm A","Gotham SSm B",Helvetica,Arial,sans-serif;
+        color: rgb(100,100,100);
+        letter-spacing: 1px;
+      }
+      .FontBig {
+        font-size: 1.7em;
+        font-weight:BOLD;
+        font-family:"Gotham SSm A","Gotham SSm B",Helvetica,Arial,sans-serif;
+        text-shadow: 0 0 30px rgb(246,235,226);
+        line-height: 1.2em;
+        color: rgb(70,70,50);
+        letter-spacing: 1px;
+      }
+      .FontMid {
+        font-size: .95em;
+        font-family:"Gotham SSm A","Gotham SSm B",Graphik,Helvetica,Arial,sans-serif;
+        line-height:1.3em;
+        color: rgb(100,100,100);
+        text-shadow: 0 0 10px rgb(246,235,226);
+      }
+      {% endif %}
+
+      .ChildCenter {
+             display:flex;
+             justify-content: center;
+             align-items:center;
+      }
+
+
+      ul{
+        display:flex;
+        justify-content: center;
+        margin-right:10%;
+      }
+      li{
+        flex:1;
+        text-align: center;
+        font-size:16px;
+        font-family:"Microsoft JhengHei";
+      }
+      p{
+      margin:0px;
+      }
+
+      .JSNavSpan{
+       border-bottom: 2px solid transparent;
+       transition: .1s;
+       transition-timing-function: ease-out;
+       }
+      .JSNavSpanHover{
+       border-bottom:2px solid rgb(195,13,3);
+       transition: 1s;
+       transition-timing-function: ease-out;
+       }
+
+       #sidebar {
+  min-width: 270px;
+  max-width: 270px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+   height: 100%;
+   border-right: 1px solid rgb(250,250,250);
+   padding: 0px;
+   }
+  #sidebar.active {
+    min-width: 100px;
+    max-width: 100px;
+    text-align: center;
+     height: 100%;}
+  #sidebar.active ul.components li {
+      text-align:center;
+      font-size: 12px; }
+  #sidebar.active ul.components li a {
+        padding: 10px 0; }
+  #sidebar.active ul.components li a span {
+          margin-right: 0;
+          display: block;
+          font-size: 24px; }
+    #sidebar.active .logo {
+      padding: 10px 0; }
+    #sidebar.active .footer {
+      display: none; }
+
+  #sidebar ul.components {
+    margin:auto;
+    display: block;
+    padding: 0px;
+    margin-left:10px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+
+
+    #sidebar ul li > ul {
+      margin-left: 10px; }
+      #sidebar ul li > ul li {
+        font-size: 14px; }
+    #sidebar ul li a {
+
+      display: block;
+      color: black;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      #sidebar ul li a span {
+        margin-right: 15px; }
+        @media (max-width: 991.98px) {
+          #sidebar ul li a span {
+            display: block; } }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+    <!-- Custom styles for this template -->
+
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar navbar-expand-lg navbar-light " style="height:65px;border-bottom:1px solid rgb(191,191,191);">
+
+
+        <a class="navbar-brand" href="{% url 'home' %}" style="font-weight:bold">
+            <img src="{% static 'NTDWeblogo4.svg' %}" class="d-inline-block alighn-top"
+                 style="height:45px;margin-left:10%"/>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <i class="icofont-plus-circle"></i>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto FlexContainer" style="min-width:60%;font-weight:">
+                <li class="nav-item">
+                    <a class="nav-link NavEle" href="{% url 'about' %}"
+                       style="color:rgb(75,75,75);font-weight:400;"><span
+                            class="JSNavSpan">ABOUT</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link NavEle" href="{% url 'project' %}" style="color:rgb(75,75,75);font-weight:400;"><span
+                            class="JSNavSpan">PROJECTS</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link NavEle" href="{% url 'service' %}" style="color:rgb(75,75,75);font-weight:400;"><span
+                            class="JSNavSpan">SERVICES</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link NavEle" href="#" style="color:rgb(75,75,75);font-weight:400;"><span
+                            class="JSNavSpan">CONTACT US</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div class="row" style="height: calc(100% - (30px + 30px));">
+    {% if request.path == '/nothing' %}
+    <div style="height: 100%;">
+        <nav id="sidebar" class="active col-1 ">
+            <ul class="components tab">
+
+                <li>
+                    <a id="parameter" href="#" class="tablinks"
+                       onclick=""><span
+                            class="fas fa-book"></span>Parameter</a>
+                </li>
+                <li>
+                    <a id="new" href="javascript:{document.getElementById('NewHome').submit()}" class="tablinks">
+                        <span class="fas fa-file"></span>
+                        New</a>
+                    <form id="NewHome" method="POST" name="NewHome" action="{% url 'home' %}">
+                        {% csrf_token %}
+                        <input type="hidden"/>
+                    </form>
+                </li>
+                <li>
+                    <a id="intro" href="#" class="tablinks"
+                       onclick=""><span
+                            class="fas fa-question"></span>
+                        Intro</a>
+                </li>
+                <!--
+                <li>
+                    <a href="#"><span class="fas fa-file"></span> New</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fas fa-save"></span> Save</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fas fa-file-import"></span> Import</a>
+                </li>...-->
+
+
+            </ul>
+
+
+        </nav>
+
+    </div>
+    {% endif %}
+    {% block content %}
+
+    {% endblock %}
+</div>
+<script>
+var NavEles =document.getElementsByClassName("NavEle");
+for (var i = 0; i <=NavEles.length-1; i++) {
+  NavEles[i].setAttribute("onmouseover", "NavMouseOver(this)");
+  NavEles[i].setAttribute("onmouseout", "NavMousOut(this)");
+
+};
+
+
+
+
+function NavMouseOver(Ele) {
+var Child=Ele.childNodes;
+  Child[0].setAttribute("class","JSNavSpanHover");
+}
+
+function NavMousOut(Ele) {
+var Child=Ele.childNodes;
+ Child[0].setAttribute("class","JSNavSpan");
+}
+
+
+
+
+
+
+
+
+
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+
+</body>
+</html>

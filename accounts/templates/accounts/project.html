@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<style>
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.ProjectCardImg{
+
+width:100%;
+
+
+border-radius: 10px;
+
+}
+
+.ProjectCardTitle{
+
+    z-index: 2;
+    margin:auto;
+}
+
+
+body{
+overflow-x:hidden;
+}
+
+
+
+
+
+</style>
+<div class="container" style="max-width:70%;">
+    {% for Projecti in designProject.all %}
+    <div class="row" style="margin-top:3%;">
+        <div class="col-md-4" style="margin:auto;margin-right:0;">
+            <img class="card-img-top img-fluid ProjectCardImg" src="{{Projecti.image.url}}" style="border-collapse: collapse;">
+        </div>
+        <div class="col-md-6" >
+
+
+            <h4 style="margin-bottom:0;">{{Projecti.Title}}</h4>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <table class=" table" style="width: 97%; border-collapse: collapse; margin-top: 3%;">
+                        <tbody>
+                        <tr>
+                            <td style="width: 100px;"><span style="font-size: 1rem;">Owner</span>
+                            </td>
+                            <td><span style="font-size: 1rem;">{{Projecti.Owner}}</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 1rem;">Architects</span></td>
+                            <td><span style="font-size: 1rem;">{{Projecti.ArchDesign}}</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 1rem;">Type</span></td>
+                            <td>{{Projecti.StructureType}}</td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 1rem;">Story</span></td>
+                            <td>{{Projecti.Story }}</td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 1rem;">Area</span></td>
+                            <td>{{Projecti.Area }}</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<script>
+
+</script>
+
+<script>
+
+</script>
+{% endblock %}
