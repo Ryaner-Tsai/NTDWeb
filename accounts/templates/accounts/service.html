@@ -311,7 +311,6 @@ text-align:center;
 margin-top:60%;
 color:rgb(255,255,255);
 font-size:1.1em;
-text-shadow:0.04em 0.04em rgba(0,0,0,0.1);
 font-family:"futura-pt",sans-serif;
 text-align:left;
 padding:5%;
@@ -327,6 +326,7 @@ font-family:"futura-pt",sans-serif;
 margin-bottom:3%;
 margin-top:5%;
 text-align:center;
+
 }
 #ServiceItemContent{
 color:rgb(0,0,0);
@@ -351,25 +351,38 @@ top:0;
 bottom:0;
 background:rgba(0,0,0,0.4);
 color:rgb(255,255,255);
+text-shadow:0.04em 0.04em rgba(0,0,0,0.1);
+}
+
+.cover:hover{
+position:absolute;
+left:0;
+right:0;
+top:0;
+bottom:0;
+background:transparent;
+color:rgb(0,0,0);
+text-shadow:0.08em 0.08em rgba(0,0,0,0.9);
 }
 
 
 
-
-
+.ServiceItemTextParent:hover{
+box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 
 </style>
 <div id="Photo" style="width:100%;height:100%;">
     <div id="Contain" style="width:80%;display:flex;margin:auto;">
         <div id="ServiceBox" class="container-fluid" style="flex:3;height:100%;display:block;">
-            <h2 id="ServiceTitle" class="Title" style="text-align:left;">Service</h2>
+            <h2 id="ServiceTitle" class="Title" style="text-align:left;">Services</h2>
             <div id="ServiceItemBox" class="row" style="width:100%;margin:0px;margin-bottom:10%">
                 <div id="ServiceItem1" class="col-md-4 ServiceItem">
-                    <a href="#">
-                        <div style="position:relative">
+                    <a href="#" onclick="ShowTitleAndText(0);">
+                        <div style="position:relative" class="ServiceItemTextParent">
 
-                            <img src="{% static 'structure-zip.jpg' %}" class="BackgroundImage">
+                            <img src="{% static 'structure2-zip.jpg' %}" class="BackgroundImage">
                             <div class="cover">
                                 <p class="ServiceItemText">STRUCTURAL DESIGN</p>
                             </div>
@@ -379,10 +392,10 @@ color:rgb(255,255,255);
 
                 </div>
                 <div id="ServiceItem2" class="col-md-4 ServiceItem">
-                    <a href="#">
-                        <div style="position:relative">
+                    <a href="#" onclick="ShowTitleAndText(1);" >
+                        <div style="position:relative" class="ServiceItemTextParent">
 
-                            <img src="{% static 'SOE-zip.jpg' %}" class="BackgroundImage">
+                            <img src="{% static 'SOE-zip2.jpg' %}" class="BackgroundImage">
                             <div class="cover">
                                 <p class="ServiceItemText">FOUNDATION DESIGN & SOE</p>
                             </div>
@@ -392,8 +405,8 @@ color:rgb(255,255,255);
 
                 </div>
                 <div id="ServiceItem3" class="col-md-4 ServiceItem">
-                    <a href="#">
-                        <div style="position:relative">
+                    <a href="#" onclick="ShowTitleAndText(2);">
+                        <div style="position:relative" class="ServiceItemTextParent">
 
                             <img src="{% static 'ShopDrawing-zip.jpg' %}" class="BackgroundImage">
                             <div class="cover">
@@ -403,8 +416,8 @@ color:rgb(255,255,255);
                     </a>
                 </div>
                 <div id="ServiceItem4" class="col-md-4 ServiceItem">
-                    <a href="#">
-                        <div style="position:relative">
+                    <a href="#"  onclick="ShowTitleAndText(3);">
+                        <div style="position:relative" class="ServiceItemTextParent">
 
                             <img src="{% static 'Report-zip.jpg' %}" class="BackgroundImage">
                             <div class="cover">
@@ -414,8 +427,8 @@ color:rgb(255,255,255);
                     </a>
                 </div>
                 <div id="ServiceItem5" class="col-md-4 ServiceItem">
-                    <a href="#">
-                        <div style="position:relative">
+                    <a href="#"  onclick="ShowTitleAndText(4);">
+                        <div style="position:relative" class="ServiceItemTextParent">
                             <img src="{% static 'Inspection-zip.jpg' %}" class="BackgroundImage">
                             <div class="cover">
                                 <p class="ServiceItemText">SPECIAL INSPECTIONS</p>
@@ -440,7 +453,8 @@ color:rgb(255,255,255);
              style="flex:1.6;display:block;background-color:rgba(255,255,255,0.9);text-align:center;margin:auto">
 
             <h2 id="ServiceItemTitle" class="Title"
-                style="color:rgb(195,13,35);text-align:center;margin-bottom:0%">We Are NTD</h2>
+                style="color:rgb(195,13,35);text-align:center;margin-bottom:0%;font-size:1.5em;max-width:80%;margin-left: auto;margin-right: auto;margin-top:7%;">
+                We Are NTD</h2>
             <p id="ServiceItemContent" style="width:90%;margin:auto;margin-bottom:5%;">
                 Our design services encompass a wide variety of disciplines and specialties, including architecture,
                 interior design, master planning, urban design and fabrication, each with a focus on sustainability.
@@ -448,7 +462,6 @@ color:rgb(255,255,255);
                 projects that reflect a deep understanding of our clients’ mission, values, and aspirations. At the same
                 time, we strive to create spaces that respond to the site’s environmental, physical, and cultural
                 context.
-                Scroll down to learn more about a particular service.
 
             </p>
         </div>
@@ -460,9 +473,18 @@ color:rgb(255,255,255);
 
 <script>
 
+function ShowTitleAndText(i) {
+var Titles= ["STRUCTURAL DESIGN","FOUNDATION DESIGN & SOE","STEEL & REBAR SHOP DETAILING","ENGINEERING CALCULATIONS AND REPORTS","SPECIAL INSPECTIONS"];
+var Contents= ["Our design services encompass a wide variety of disciplines and specialties, including architecture , including architecture,interior design, master planning, urban design and fabrication, each with a focus on sustainability.ZGF offers these services in tandem with landscape architecture, graphic design and more to create projects that reflect a deep understanding of our clients’ mission, values, and aspirations. At the same time, we strive to create spaces that respond to the site’s environmental, physical, and cultural context.",
+                "Our design services encompass a wide variety of disciplines and specialties, including architecture , including architecture,interior design, master planning, urban design and fabrication, each with a focus on sustainability.ZGF offers these services in tandem with landscape architecture, graphic design and more to create projects that reflect a deep understanding of our clients’ mission, values, and aspirations. At the same time, we strive to create spaces that respond to the site’s environmental, physical, and cultural context.",
+                "Our design services encompass a wide variety of disciplines and specialties, including architecture , including architecture,interior design, master planning, urban design and fabrication, each with a focus on sustainability.ZGF offers these services in tandem with landscape architecture, graphic design and more to create projects that reflect a deep understanding of our clients’ mission, values, and aspirations. At the same time, we strive to create spaces that respond to the site’s environmental, physical, and cultural context.",
+                "Our design services encompass a wide variety of disciplines and specialties, including architecture , including architecture,interior design, master planning, urban design and fabrication, each with a focus on sustainability.ZGF offers these services in tandem with landscape architecture, graphic design and more to create projects that reflect a deep understanding of our clients’ mission, values, and aspirations. At the same time, we strive to create spaces that respond to the site’s environmental, physical, and cultural context.",
+                "Our design services encompass a wide variety of disciplines and specialties, including architecture , including architecture,interior design, master planning, urban design and fabrication, each with a focus on sustainability.ZGF offers these services in tandem with landscape architecture, graphic design and more to create projects that reflect a deep understanding of our clients’ mission, values, and aspirations. At the same time, we strive to create spaces that respond to the site’s environmental, physical, and cultural context.",];
+var TitleEle = document.getElementById("ServiceItemTitle");
+var ContentEle = document.getElementById("ServiceItemContent");
+TitleEle.innerHTML = Titles[i];
+ContentEle.innerHTML = Contents[i];
+}
 </script>
 
-<script>
-
-</script>
 {% endblock %}

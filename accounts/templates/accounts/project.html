@@ -44,14 +44,22 @@ overflow-x:hidden;
 
 
 
+
+
 </style>
 <div class="container" style="max-width:70%;">
+    <div class="row" style="margin-top:3%;margin-bottom:3%;">
+        <h2 style="text-decoration:underline;text-decoration-color:rgb(195,13,51);margin:auto;">PROJECTS
+        </h2>
+    </div>
+
     {% for Projecti in designProject.all %}
     <div class="row" style="margin-top:3%;">
         <div class="col-md-4" style="margin:auto;margin-right:0;">
-            <img class="card-img-top img-fluid ProjectCardImg" src="{{Projecti.image.url}}" style="border-collapse: collapse;">
+            <img class="card-img-top img-fluid ProjectCardImg" src="{{Projecti.image.url}}" id="{{Projecti.Title}}"
+                 style="border-collapse: collapse;">
         </div>
-        <div class="col-md-6" >
+        <div class="col-md-6">
 
 
             <h4 style="margin-bottom:0;">{{Projecti.Title}}</h4>
@@ -61,7 +69,7 @@ overflow-x:hidden;
                     <table class=" table" style="width: 97%; border-collapse: collapse; margin-top: 3%;">
                         <tbody>
                         <tr>
-                            <td style="width: 100px;"><span style="font-size: 1rem;">Owner</span>
+                            <td style="width: 150px;"><span style="font-size: 1rem;">Owner</span>
                             </td>
                             <td><span style="font-size: 1rem;">{{Projecti.Owner}}</span></td>
                         </tr>
@@ -70,8 +78,8 @@ overflow-x:hidden;
                             <td><span style="font-size: 1rem;">{{Projecti.ArchDesign}}</span></td>
                         </tr>
                         <tr>
-                            <td><span style="font-size: 1rem;">Type</span></td>
-                            <td>{{Projecti.StructureType}}</td>
+                            <td><span style="font-size: 1rem;">Type of Structure</span></td>
+                            <td><span >{{Projecti.StructureType}}</span></td>
                         </tr>
                         <tr>
                             <td><span style="font-size: 1rem;">Story</span></td>
@@ -93,6 +101,10 @@ overflow-x:hidden;
     {% endfor %}
 </div>
 <script>
+{% if JumpTargetLocation  %}
+window.location.hash = "#"+"{{JumpTargetLocation}}";
+{% endif %}
+
 
 </script>
 

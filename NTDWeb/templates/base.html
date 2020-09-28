@@ -18,7 +18,7 @@
     <link href="//db.onlinewebfonts.com/c/a7e3822358f6dcb2f986a68cf24721b2?family=MV+Boli" rel="stylesheet"
           type="text/css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script type="text/javascript" src="{% static '/JsCode.js' %}"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
@@ -44,10 +44,9 @@
 
 
       {% if request.path == '/' %}
+      background:rgba(253,253,253,0.5);
 
-      background: url("{% static 'NTDBackGroundR15.svg' %}");
-      background-position:center top;
-      background-size:100%;
+
 
 
 
@@ -213,14 +212,82 @@
 
 
 
+.carousel-item {
+  height: 65vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  cursor: pointer;
+
+}
+
+.carousel-inner{
+ width:35%;
+ margin-left:auto;
+ margin-right:auto;
+ margin-top:20px;
+
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(100,100,100,0.5);
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: rgb(195,13,51);
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: rgb(195,13,51);
+}
+
+.display-4{
+font-size:1.5em;
+
+}
+carousel-caption{
+position: absolute;
+right: 5%;
+bottom: 20px;
+left: 5%;
+
+}
 
 
 
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
 
-
-
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 
 
@@ -258,15 +325,18 @@
                             class="JSNavSpan">ABOUT</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link NavEle" href="{% url 'project' %}" style="color:rgb(75,75,75);font-weight:400;"><span
+                    <a class="nav-link NavEle" href="{% url 'project' %}"
+                       style="color:rgb(75,75,75);font-weight:400;"><span
                             class="JSNavSpan">PROJECTS</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link NavEle" href="{% url 'service' %}" style="color:rgb(75,75,75);font-weight:400;"><span
+                    <a class="nav-link NavEle" href="{% url 'service' %}"
+                       style="color:rgb(75,75,75);font-weight:400;"><span
                             class="JSNavSpan">SERVICES</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link NavEle" href="#" style="color:rgb(75,75,75);font-weight:400;"><span
+                    <a class="nav-link NavEle" href="{% url 'contact' %}"
+                       style="color:rgb(75,75,75);font-weight:400;"><span
                             class="JSNavSpan">CONTACT US</span></a>
                 </li>
             </ul>
@@ -274,55 +344,114 @@
     </nav>
 </header>
 
-<div class="row" style="height: calc(100% - (30px + 30px));">
-    {% if request.path == '/nothing' %}
-    <div style="height: 100%;">
-        <nav id="sidebar" class="active col-1 ">
-            <ul class="components tab">
-
-                <li>
-                    <a id="parameter" href="#" class="tablinks"
-                       onclick=""><span
-                            class="fas fa-book"></span>Parameter</a>
-                </li>
-                <li>
-                    <a id="new" href="javascript:{document.getElementById('NewHome').submit()}" class="tablinks">
-                        <span class="fas fa-file"></span>
-                        New</a>
-                    <form id="NewHome" method="POST" name="NewHome" action="{% url 'home' %}">
-                        {% csrf_token %}
-                        <input type="hidden"/>
-                    </form>
-                </li>
-                <li>
-                    <a id="intro" href="#" class="tablinks"
-                       onclick=""><span
-                            class="fas fa-question"></span>
-                        Intro</a>
-                </li>
-                <!--
-                <li>
-                    <a href="#"><span class="fas fa-file"></span> New</a>
-                </li>
-                <li>
-                    <a href="#"><span class="fas fa-save"></span> Save</a>
-                </li>
-                <li>
-                    <a href="#"><span class="fas fa-file-import"></span> Import</a>
-                </li>...-->
-
-
-            </ul>
-
-
-        </nav>
+{% if request.path == '/' %}
+<div id="UntilNowBlock" class="container">
+    <h2 style="text-align:center;margin-bottom:20px;margin-top:20px;">Until Now,We Have,</h2>
+    <div style="height:16%;margin:auto;display:flex;width:60%;text-align:center;">
+        <div style="min-height:20%;margin:auto;border-right:1px solid rgb(217,217,217)" class="ChildCenter">
+            <div style="flex:0.5;"></div>
+            <div style="flex:2;color:rgb(195,13,35)" class="ChildCenter FontMax">
+                <span>15</span>
+            </div>
+            <div style="flex:0.5;display:block;">
+            </div>
+            <div style="flex:8;display:block;">
+                <p class="FontBig" style="text-align:left">Mid & High Rise Structure Design </p>
+            </div>
+            <div style="flex:0.5;"></div>
+        </div>
+        <div style="min-height:20%;margin:auto;border-right:1px solid rgb(217,217,217)" class="ChildCenter">
+            <div style="flex:0.5;"></div>
+            <div style="flex:2;color:rgb(195,13,35)" class="ChildCenter FontMax">
+                <span>50</span>
+            </div>
+            <div style="flex:0.5;display:block;">
+            </div>
+            <div style="flex:8;display:block;">
+                <p class="FontBig" style="text-align:left">%engineer pass certificate </p>
+            </div>
+            <div style="flex:0.5;"></div>
+        </div>
+        <div style="min-height:20%;margin:auto;" class="ChildCenter">
+            <div style="flex:0.5;"></div>
+            <div style="flex:2;color:rgb(195,13,35)" class="ChildCenter FontMax">
+                <span>5</span>
+            </div>
+            <div style="flex:0.5;display:block;">
+            </div>
+            <div style="flex:8;display:block;">
+                <p class="FontBig" style="text-align:left">years structural design experience</p>
+            </div>
+            <div style="flex:0.5;"></div>
+        </div>
 
     </div>
-    {% endif %}
+</div>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+
+        <div class="carousel-item active" style="background-image: url('{% static '2128-night_med-1.png' %}')"
+             onclick="javascript:{document.getElementById('photo1').submit()};">
+            <div class="carousel-caption d-none d-md-block">
+                <h3 class="display-4">Ocean Avenue Brooklyn, New York</h3>
+                <p class="lead">Architects</p>
+            </div>
+        </div>
+
+        <form id="photo1" method="POST" action="{% url 'project' %}">
+            {% csrf_token %}
+            <input type="text" id="fname" name="Photo" style="display:none" value="Ocean Ave, Brooklyn, NY">
+        </form>
+        <!-- Slide Two - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('{% static '208-delancey-street-1.jpg' %}')" onclick="javascript:{document.getElementById('photo2').submit()};">
+            <div class="carousel-caption d-none d-md-block">
+                <h3 class="display-4">Delancey Street, New York </h3>
+                <p class="lead">Architects</p>
+            </div>
+        </div>
+        <form id="photo2" method="POST" action="{% url 'project' %}">
+            {% csrf_token %}
+            <input type="text" id="fname2" name="Photo" style="display:none" value="Delancey Street, Manhattan, NY">
+        </form>
+        <!-- Slide Three - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('{% static '124-Eckford-Street_Brooklyn.jpg'  %}')" onclick="javascript:{document.getElementById('photo3').submit()};">
+            <div class="carousel-caption d-none d-md-block">
+                <h3 class="display-4">Eckford Street, Brooklyn, New York</h3>
+                <p class="lead">Architects</p>
+            </div>
+        </div>
+        <form id="photo3" method="POST" action="{% url 'project' %}">
+            {% csrf_token %}
+            <input type="text" id="fname3" name="Photo" style="display:none" value="Eckford Street, Brooklyn, NY">
+        </form>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+{% else %}
+<div class="row" style="height: calc(100% - (30px + 30px));">
+
+
     {% block content %}
 
     {% endblock %}
 </div>
+{% endif %}
 <script>
 var NavEles =document.getElementsByClassName("NavEle");
 for (var i = 0; i <=NavEles.length-1; i++) {
@@ -343,6 +472,7 @@ function NavMousOut(Ele) {
 var Child=Ele.childNodes;
  Child[0].setAttribute("class","JSNavSpan");
 }
+
 
 
 
