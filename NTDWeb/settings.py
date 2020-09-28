@@ -134,5 +134,10 @@ MEDIA_URL = '/media/'
 EMAIL_HOST ='smtp.gmail.com'
 EMAIL_PORT =587
 EMAIL_HOST_USER ='ntdwebtest@gmail.com'
-EMAIL_HOST_PASSWORD =''
+EMAIL_HOST_PASSWORD ='Dps6deaxta'
 EMAIL_USE_TLS= True
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
