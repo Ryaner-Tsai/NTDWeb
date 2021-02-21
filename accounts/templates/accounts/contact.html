@@ -1,419 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<style>
-html, body, .container-fluid, .row {
- height: 100%;
 
- }
-body {
-font-family: Microsoft JhengHei;
-overflow:hidden;
-}
 
-
-div {
-  padding: 0;
-  margin: 0;
-  font-family: Microsoft JhengHei;
-}
-
-table, th, td {
-  text-align: center;
-  border-collapse: collapse;
-
-}
-div.load table tr th {
-width:25%;
-}
-
-#loadTableTitle tr th{
-width:25%;
-}
-
-#sidebar {
-  min-width: 270px;
-  max-width: 270px;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-   height: 100%;
-   border-right: 1px solid rgb(250,250,250);
-   padding: 0px;
-   }
-  #sidebar.active {
-    min-width: 100px;
-    max-width: 100px;
-    text-align: center;
-     height: 100%;}
-  #sidebar.active ul.components li {
-      text-align:center;
-      font-size: 12px; }
-  #sidebar.active ul.components li a {
-        padding: 10px 0; }
-  #sidebar.active ul.components li a span {
-          margin-right: 0;
-          display: block;
-          font-size: 24px; }
-    #sidebar.active .logo {
-      padding: 10px 0; }
-    #sidebar.active .footer {
-      display: none; }
-
-  #sidebar ul.components {
-    margin:auto;
-    display: block;
-    padding: 0px;
-    margin-left:10px;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s; }
-
-
-    #sidebar ul li > ul {
-      margin-left: 10px; }
-      #sidebar ul li > ul li {
-        font-size: 14px; }
-    #sidebar ul li a {
-
-      display: block;
-      color: black;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-      #sidebar ul li a span {
-        margin-right: 15px; }
-        @media (max-width: 991.98px) {
-          #sidebar ul li a span {
-            display: block; } }
-
-
-
-
-
-
-/* Change background color of buttons on hover */
-.tab a:hover {
-  background-color: rgb(250,250,250);
-  text-decoration: none
-}
-
-/* Create an active/current tablink class */
-.tab a.active {
-  background-color: rgb(250,250,250);
-}
-
-/* Style the tab content */
-.tabcontent .input-tab{
-
-  margin: 0;
-  padding:0px;
-
-
-}
-.tabframe {
-  display: flex;
-  justify-content:center;
-  background-color: rgb(254,254,254);
-  margin: 0;
-  border: 1px solid rgb(250,250,250);
-  padding:0px;
-  height:100%;
-  overflow: auto;
-
-}
-
-
-.chinese-title{
-
-font-size: 10px;
-font-weight:900;
-}
-.english-title{
-font-weight:900;
-font-size: 12px;
-background: rgb(250,250,250);
-padding-left: 10px;
-padding-top: 5px;
-padding-bottom: 5px;
-}
-.english-content{
-font-weight:450;
-font-size: 13.5px;
-}
-.unit{
-font-weight:450;
-font-size: 12.5px;
-}
-
-
-.tab-element{
-padding-right: 10px;
-padding-left: 10px;
-padding-bottom:10px;
-}
-.child-center {
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-
-
-
-/* width */
-::-webkit-scrollbar {
-  width: 7px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-/* Style the tab */
-
-
-/* Style the buttons inside the tab */
-.inputButtonContainer a {
-  background-color: rgba(255,255,255,0.1);
-  float: left;
-  border:1px solid rgba(0, 0, 0, 0.1);
-  border-bottom:0px;
-  outline: none;
-  cursor: pointer;
-  transition: 0.3s;
-
-}
-
-
-/* Create an active/current tablink class */
-.inputButtonContainer a.active {
-  background-color:rgb(250,250,250);
-}
-
-
-.rcorners2 {
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
-  margin-right: 0;
-  display: block;
-  font-size: 12px;
-  color: black;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  min-width: 100px;
-  max-width: 100px;
-  height: 100%;
-
-
-}
-
-.input-tab{
-width:100%
-}
-.output-tab{
-width:100%
-}
-
-
-
-input[type="text"]:disabled {
-  background: rgb(250,250,250);
-  outline:none;
-  border:1px solid rgba(169,169,169,1);
-}
-
-label{
-    margin-bottom: 5px;
-    font-size: 14px;
-}
-
-
-.child-center-column{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-button.btn {
- outline:none;
-}
-
-#loadList::-webkit-scrollbar {
-    display: none;
-}
-
-.load{
-cursor: context-menu;
-}
-
-
-
-
-
-
-
-
-.BackgroundImage{
-height:100%;
-width:100%;
-
-
-}
-.InputItem{
-margin:auto;
-margin-bottom:3%;
-text-align:center;
-
-}
-input,textarea{
-max-height: 45px;
-min-height: 45px;
-border-radius: 5px;
-font-family: "futura-pt",sans-serif;
-font-size: 18px;
-font-weight: normal;
-line-height: 22px;
-color: #33475b;
-border: 2px solid rgba(0,0,0,0.5);
-width: 90%;
-padding-left: 20px;
-margin:0%;
-margin-bottom: 3%;
-}
-textarea{
-min-height: 200px;
-width: 95%;
-padding-top:10px;
-padding-bottom:10px;
-}
-input:focus, textarea:focus {
-outline:none;
-border:2px solid rgba(195,13,35,1);
-box-shadow:0 0 1.5px rgba(195,13,35,1);
-}
-.ServiceItemText{
-margin-top:60%;
-color:rgb(255,255,255);
-font-size:1.1em;
-font-family:"futura-pt",sans-serif;
-text-align:left;
-padding:5%;
-letter-spacing:2px;
-line-height: 1.3em;
-}
-
-.Title{
-color:rgb(0,0,0);
-font-size:2.25em;
-font-family:"futura-pt",sans-serif;
-margin-bottom:3%;
-margin-top:5%;
-text-align:center;
-
-
-}
-#ServiceItemContent{
-color:rgb(0,0,0);
-font-size:0.85em;
-text-shadow:0.04em 0.04em rgba(0,0,0,0.1);
-font-family:"futura-pt",sans-serif;
-text-align:left;
-padding:5%;
-letter-spacing:2px;
-line-height: 1.3em;
-}
-#Photo{
-      background: url("{% static 'ShakeHands-zip.jpg' %}");
-      background-position:center center;
-      background-size:100% 100%;
-}
-
-
-.div{
-border:1px solid black;
-}
-
-#InfoCover{
-
-display:block;
-
-color:rgb(255,255,255);
-height:40%;
-
-
-position: absolute;
-bottom:10%;
-left:10%;
-}
-#NTDIcon{
-max-width:80%;
-margin:0;
-margin-bottom:3%;
-}
-
-
-
-
-
-.btn{
-    transition:0.15s;
-    text-align: center;
-    outline:none;
-    border:1px solid rgba(100,100,100,1);
-    background:rgb(255,255,255);
-}
-.btn:hover{
-color:rgb(195,13,35);
-outline:none;
-border:1px solid rgba(195,13,35,1);
-box-shadow:0 0 1.5px rgba(195,13,35,1);
-}
-.btn:focus{
-outline:none;
-box-shadow:0 0 0px rgba(195,13,35,1);
-}
-
-#ContactUs{
-letter-spacing:5px;
-font-size: 56px;
-line-height: 1.25;
-font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif;
-}
-
-.Contain{
-font-size: 18px;
-font-family:"Arial", "Helvetica Neue", "Helvetica", sans-serif;
--webkit-font-smoothing: antialiased;
-}
-.AttachedWord{
-font-size: 0.8em;
-font-family:"Arial", "Helvetica Neue", "Helvetica", sans-serif;
--webkit-font-smoothing: antialiased;
-color:rgb(200,200,200);
-}
-
-#MapLocation{
-color:rgb(225,225,225);
-font-weight:bold;
-text-decoration: none;
-}
-#MapLocation:hover{
-text-decoration-line: underline;
-color:rgb(0,0,0);
-}
-</style>
-
-<div id="Photo" style="width:100%;height:100%;display:flex;">
+<div id="Photo" >
  {% if MessageName %}
-    <div style="margin:auto;display:block;">
+    <div  style="margin:auto;display:block;">
     <h1 style="text-align:center;color:white">Thanks {{ MessageName }}!</h1>
     <p style="text-align:center;color:white"> We received your message and will respond shortly..</p>
 
@@ -421,13 +13,13 @@ color:rgb(0,0,0);
     </div>
  {%  else  %}
 
-    <div id="InfoBlock"  style="flex:1;height:100%;position:relative;">
+    <div id="InfoBlock"  >
 
 
         <div id="InfoCover" >
-            <h2 style="margin:0;" id="ContactUs" > Contact Us </h2>
-            <p class="Contain" id="Contain" style="">Please fill in the message form if you have any inquiry. Thank you!</p>
-            <p class="AttachedWord" style="margin-top:3%;">50 Main St #1000 White Plains, NY 10606 <a id="MapLocation" href="https://reurl.cc/0OEY8Y">(Map Location)</a></p>
+            <h2  id="ContactUs" > Contact Us </h2>
+            <p class="Contain" id="Contain" >Please fill in the message form if you have any inquiry. Thank you!</p>
+            <p class="AttachedWord">50 Main St #1000 White Plains, NY 10606 <a id="MapLocation" href="https://reurl.cc/0OEY8Y">(Map Location)</a></p>
             <p class="AttachedWord">Tel:(000)000-0000 </p>
 
 
@@ -436,13 +28,12 @@ color:rgb(0,0,0);
     <div id="Empty" style="flex:0.1">
 
     </div>
-    <div id="MessageBlock"
-         style="flex:1.6;height:100%;display:flex;justify-content:center;">
-        <div id="MessageCover" style="background-color:rgba(255,255,255,1);width:80%;margin-top:5%;margin-bottom:5%">
-            <div class="Title" style="color:rgb(195,13,51)">Message</div>
+    <div id="MessageBlock">
+        <div id="MessageCover">
+            <div class="Title">Message</div>
 
-        <div id="FormBox" style="margin:auto;padding-left:5%;padding-right:5%">
-            <form id="MessageForm" class="form-horizontal" action="{% url 'contact' %}" method="post" style="width:100%">
+        <div id="FormBox" >
+            <form id="MessageForm" class="form-horizontal" action="{% url 'contact' %}" method="post" >
                 {% csrf_token %}
                 <div class="container">
                     <div class="row">
@@ -471,7 +62,7 @@ color:rgb(0,0,0);
                             <div class="InputItem">
                     <textarea name="Message" id="inputTextarea" form="MessageForm" tabindex="13" placeholder="Message*" aria-invalid="false" rows="5" cols="50"></textarea>
                       <input type="submit" value="Send Message" id="submit" class="btn"
-                                   style="max-width:25%;padding:0">
+                                  >
 
 
                             </div>
@@ -496,29 +87,6 @@ color:rgb(0,0,0);
 
 </div>
 
-<script>
 
-function ShowTitleAndText(i) {
-var Titles= ["STRUCTURAL DESIGN","FOUNDATION DESIGN & SOE","STEEL & REBAR SHOP DETAILING","ENGINEERING CALCULATIONS AND REPORTS","SPECIAL INSPECTIONS"];
-var Contents= ["Our design services encompass a wide variety of disciplines and specialties, including architecture , including architecture,interior design, master planning, urban design and fabrication, each with a focus on sustainability.ZGF offers these services in tandem with landscape architecture, graphic design and more to create projects that reflect a deep understanding of our clients’ mission, values, and aspirations. At the same time, we strive to create spaces that respond to the site’s environmental, physical, and cultural context.",
-                "Our design services encompass a wide variety of disciplines and specialties, including architecture , including architecture,interior design, master planning, urban design and fabrication, each with a focus on sustainability.ZGF offers these services in tandem with landscape architecture, graphic design and more to create projects that reflect a deep understanding of our clients’ mission, values, and aspirations. At the same time, we strive to create spaces that respond to the site’s environmental, physical, and cultural context.",
-                "Our design services encompass a wide variety of disciplines and specialties, including architecture , including architecture,interior design, master planning, urban design and fabrication, each with a focus on sustainability.ZGF offers these services in tandem with landscape architecture, graphic design and more to create projects that reflect a deep understanding of our clients’ mission, values, and aspirations. At the same time, we strive to create spaces that respond to the site’s environmental, physical, and cultural context.",
-                "Our design services encompass a wide variety of disciplines and specialties, including architecture , including architecture,interior design, master planning, urban design and fabrication, each with a focus on sustainability.ZGF offers these services in tandem with landscape architecture, graphic design and more to create projects that reflect a deep understanding of our clients’ mission, values, and aspirations. At the same time, we strive to create spaces that respond to the site’s environmental, physical, and cultural context.",
-                "Our design services encompass a wide variety of disciplines and specialties, including architecture , including architecture,interior design, master planning, urban design and fabrication, each with a focus on sustainability.ZGF offers these services in tandem with landscape architecture, graphic design and more to create projects that reflect a deep understanding of our clients’ mission, values, and aspirations. At the same time, we strive to create spaces that respond to the site’s environmental, physical, and cultural context.",];
-var TitleEle = document.getElementById("ServiceItemTitle");
-var ContentEle = document.getElementById("ServiceItemContent");
-TitleEle.innerHTML = Titles[i];
-ContentEle.innerHTML = Contents[i];
-}
-
-
-
-
-
-
-
-
-
-</script>
 
 {% endblock %}

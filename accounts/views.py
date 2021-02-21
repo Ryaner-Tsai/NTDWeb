@@ -39,8 +39,8 @@ def contact(request):
         send_mail(
         '【Message from NTD Website Visitor:'+MessageName + '】',
         Message+'  \n my phone number:'+MessagePhone +'\n my company:'+MessageCompany,
-        MessageEmail, #from email
-        ['eddie456858@gmail.com'],#to email
+        MessageEmail,#from email
+        [' office@ntdeng.net'],#to email
         )
 
         return render(request, 'accounts/contact.html', {'MessageName': MessageName})
