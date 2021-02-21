@@ -1,0 +1,132 @@
+body {
+  background: url("/static/AWall.jpg");
+  background-position: center top;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+  }
+  
+    .service-outbox{
+      width:80%;
+      display:flex;
+      margin:auto;
+    }
+    .service-item-box{
+      flex:3;
+      height:100%;
+      display:block;
+    }
+    .service-intro-box{
+      flex:1.6;
+      display:block;
+      background-color:rgba(255,255,255,0.9);
+      text-align:center;
+      margin:auto
+    }
+    .service-title{
+      margin-top: 10px;
+    margin-bottom: 15px;
+      text-align:left;
+      color:white;
+      font-size: 1.5em;
+      letter-spacing:2px;
+    }
+    .ServiceItem{
+    margin:auto;
+    margin-bottom:3%;
+    text-align:center;
+    
+    }
+  .ServiceItemText{
+    margin-top:60%;
+    color:rgb(255,255,255);
+    font-size:1.1em;
+    font-family:"futura-pt",sans-serif;
+    text-align:left;
+    padding:5%;
+    letter-spacing:2px;
+    line-height: 1.3em;
+    }
+    
+    .service-intro-title{    
+    text-shadow:0.04em 0.04em rgba(0,0,0,0.1);
+    font-family:"futura-pt",sans-serif;
+    color:rgb(195,13,35);
+    text-align:center;
+    margin-bottom:0%;
+    font-size:1.5em;
+    max-width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:7%;    
+    }
+    .service-contain{
+      width:90%;
+      margin:auto;
+      margin-bottom:5%;
+    }
+    .BackgroundImage{
+      height:100%;
+      width:100%;    
+      }
+    #ServiceItemContent{
+      color: rgb(0,0,0);
+      font-size: 0.85em;
+      text-shadow: 0.04em 0.04em rgb(0 0 0 / 10%);
+      font-family: "futura-pt",sans-serif;
+      text-align: justify;
+      word-break: break-all;
+      padding: 5%;
+      letter-spacing: 2px;
+      line-height: 1.5em;
+    }
+    #Photo{
+          background: url("{% static 'AWall.jpg' %}");
+          background-position:center center;
+          background-size:100% 100%;
+          width:100%;
+          height:100%;
+    }
+    .cover{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background:rgba(0,0,0,0.4);
+    color:rgb(255,255,255);
+    text-shadow:0.04em 0.04em rgba(0,0,0,0.1);
+    }
+    
+    .cover:hover{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background:transparent;
+    color:rgb(0,0,0);
+    text-shadow:0.08em 0.08em rgba(0,0,0,0.9);
+    }
+    
+    
+    
+    .ServiceItemTextParent:hover{
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+@media only screen and (max-width: 900px) {
+body {
+  background-position: center center;
+  overflow: scroll;
+  }
+  .service-outbox{   
+    flex-wrap:wrap;
+  }
+  .service-intro-box{
+    flex:auto;
+    display:block;
+    background-color:rgba(255,255,255,0.9);
+    text-align:center;
+    margin:auto
+  }
+}

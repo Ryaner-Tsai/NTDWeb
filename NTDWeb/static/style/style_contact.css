@@ -1,0 +1,203 @@
+body {
+  background: url("/static/ShakeHands-zip.jpg");
+  background-position: center top;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+  }
+  #Photo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  #InfoBlock{
+    flex: 1;
+    height: 100%;
+    position: relative;
+  }
+  .InputItem{
+    margin:auto;
+    margin-bottom:3%;
+    text-align:center;
+    
+    }
+    input,textarea{
+    max-height: 45px;
+    min-height: 45px;
+    border-radius: 5px;
+    font-family: "futura-pt",sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 22px;
+    color: #33475b;
+    border: 2px solid rgba(0,0,0,0.5);
+    width: 90%;
+    padding-left: 20px;
+    margin:0%;
+    margin-bottom: 3%;
+    }
+    textarea{
+    min-height: 200px;
+    width: 95%;
+    padding-top:10px;
+    padding-bottom:10px;
+    }
+    input:focus, textarea:focus {
+    outline:none;
+    border:2px solid rgba(195,13,35,1);
+    box-shadow:0 0 1.5px rgba(195,13,35,1);
+    }
+    
+    
+    .Title{
+      color:rgb(195,13,51);
+    font-size:2.25em;
+    font-family:"futura-pt",sans-serif;
+    margin-bottom:3%;
+    margin-top:5%;
+    text-align:center;    
+    }
+    #MessageForm{
+      width:100%;
+    }
+    #FormBox{
+      margin:auto;
+      padding-left:5%;
+      padding-right:5%
+    }
+    #submit{
+      max-width:25%;
+      padding:0;
+    }
+  .div{
+    border:1px solid black;
+    }
+    
+    #InfoCover{
+    
+    display:block;
+    
+    color:rgb(255,255,255);
+    height:40%;
+    
+    
+    position: absolute;
+    bottom:10%;
+    left:10%;
+    }
+    #NTDIcon{
+    max-width:80%;
+    margin:0;
+    margin-bottom:3%;
+    }   
+    .btn{
+        transition:0.15s;
+        text-align: center;
+        outline:none;
+        border:1px solid rgba(100,100,100,1);
+        background:rgb(255,255,255);
+    }
+    .btn:hover{
+    color:rgb(195,13,35);
+    outline:none;
+    border:1px solid rgba(195,13,35,1);
+    box-shadow:0 0 1.5px rgba(195,13,35,1);
+    }
+    .btn:focus{
+    outline:none;
+    box-shadow:0 0 0px rgba(195,13,35,1);
+    }
+    
+    #ContactUs{
+    letter-spacing:5px;
+    font-size: 56px;
+    line-height: 1.25;
+    font-family: "Oswald", "Helvetica Neue", "Helvetica", sans-serif;
+    margin:0;
+    }
+    #MessageBlock{
+      flex: 1.6;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    #MessageCover{
+      background-color:rgba(255,255,255,1);width:80%;margin-top:5%;margin-bottom:5%
+    }
+    
+    .Contain{
+    font-size: 18px;
+    font-family:"Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    }
+    
+    .AttachedWord{
+    font-size: 0.8em;
+    font-family:"Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color:rgb(200,200,200);
+    }
+    .AttachedWord:nth-child(1){
+      margin-top:3%;
+    }
+    
+    #MapLocation{
+    color:rgb(225,225,225);
+    font-weight:bold;
+    text-decoration: none;
+    }
+    #MapLocation:hover{
+    text-decoration-line: underline;
+    color:rgb(0,0,0);
+    }
+@media only screen and (max-width: 900px) {
+body {
+  background-position: center center;
+  overflow: scroll;
+  }
+  #Photo {   
+    flex-wrap: wrap;
+  }
+  #MessageBlock {
+    flex: auto;
+    padding-bottom: 15%;
+    height: fit-content;
+  }
+  #InfoBlock {
+    flex: auto;
+    margin-top: 10%;
+    padding: 10px;
+    height: auto;
+}
+  #InfoCover {
+    display: block;
+    color: rgb(255,255,255);
+    height: 40%;
+    position: unset;
+    text-align: center;
+}
+.AttachedWord{
+  display: none;
+}
+#submit {
+  padding: 0px 5px;
+  max-width: fit-content;
+}
+#MessageCover {
+ height: fit-content;
+ width: 90%;
+}
+#ContactUs {
+  font-size: 40px;
+
+}
+.Contain {
+  font-size: 15px;
+}
+.Title{
+    font-size: 1.85em;
+}
+input, textarea {
+  font-size: 15px;
+}
+}
